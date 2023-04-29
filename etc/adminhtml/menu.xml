@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <menu>
+        <add id="Fahim_Faq::faqadmin" title="Fahim FAQ" module="Fahim_Faq" sortOrder="10"
+             dependsOnModule="Fahim_Faq" resource="Magento_Backend::content"/>
+        <add id="Fahim_Faq::faq" title="Add FAQ" module="Fahim_Faq" sortOrder="20" resource="Fahim_Faq::faq"
+             action="faq/faq" parent="Fahim_Faq::faqadmin"/>
+        <add id="Fahim_Faq::faqcat" title="Add FAQ Categories" module="Fahim_Faq" sortOrder="30"
+             resource="Fahim_Faq::faqcat" action="faq/faqcat" parent="Fahim_Faq::faqadmin"/>
+        <add id="Fahim_Faq::settings"
+             title="Settings"
+             module="Fahim_Faq"
+             sortOrder="50"
+             resource="Fahim_Faq::settings"
+             action="adminhtml/system_config/edit/section/faq"
+             parent="Fahim_Faq::faqadmin"/>
+    </menu>
+</config>
